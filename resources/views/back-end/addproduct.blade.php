@@ -63,10 +63,10 @@ New Product
                         @enderror
                       </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row" hidden>
                       <label for="name" class="col-sm-3 control-label">Seller ID <span style="color:red;">*</span></label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="seller_id" value="{{ old('name') }}" required placeholder="Enter Seller ID">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="seller_id" value="1" required placeholder="Enter Seller ID">
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

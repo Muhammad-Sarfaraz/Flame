@@ -90,7 +90,7 @@
         </p>
       </a>
     </li>
-    <li class="nav-item has-treeview">
+    {{-- <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-th"></i>
         <p>
@@ -112,8 +112,8 @@
           </a>
         </li>
       </ul>
-    </li>
-    <li class="nav-item has-treeview">
+    </li> --}}
+    {{-- <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-th"></i>
         <p>
@@ -135,8 +135,8 @@
           </a>
         </li>
       </ul>
-    </li>
-    <li class="nav-item has-treeview">
+    </li> --}}
+    {{-- <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-th"></i>
         <p>
@@ -154,7 +154,7 @@
         </li>
         @endforeach
       </ul>
-    </li>
+    </li> --}}
     <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-th"></i>

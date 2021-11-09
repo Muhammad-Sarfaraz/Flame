@@ -21,10 +21,6 @@
                           <td style="padding:10px !important;text-align:left;font-size:16px;font-weight:bold"> {{$order_details->customer_name}}</td>
                         </tr>
                         <tr>
-                          <td style="padding:10px !important;text-align:left;font-size:16px;font-weight:bold"> Name</td>
-                          <td style="padding:10px !important;text-align:left;font-size:16px;font-weight:bold"> {{$order_details->customer_name}}</td>
-                        </tr>
-                        <tr>
                             <td style="padding:10px !important;text-align:left;font-size:16px;font-weight:bold"> Phone</td>
                             <td style="padding:10px !important;text-align:left;font-size:16px;font-weight:bold">  {{$order_details->customer_phone}}</td>
                         </tr>

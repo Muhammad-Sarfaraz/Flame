@@ -7,19 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="Developed By" content="Abdullah Al Masud, TwinsTech BD (www.twinstechbd.com), 01852019107">
     <meta name="keywords" content="">
     <meta name="description"
-        content="Gulshan Shop online shopping in bangladesh with free home delivery. Shop online for latest electronics, mobiles, fashion apparels. ✓Cash On Delivery ✓Low Prices">
-    <meta property="og:url" content="http://gulshanshop.com/" />
+        content="">
+    <meta property="og:url" content="http://{{url('/')}}.com/" />
     <meta property="og:type" content="website">
-    <meta property="og:title"
-        content="Online Shopping In Bangladesh: Fashion, Electronics, Mobiles - Gulshanshop.com" />
+    <meta property="og:title" content="{{\App\Setting\App::title ?? ''}}" />
     <meta property="og:description"
-        content="Daraz.com.bd online shopping in bangladesh with free home delivery. Shop online for latest electronics, mobiles, fashion apparels. ✓Cash On Delivery ✓Low Prices" />
-
-    <link rel="shortcut icon" href="{{ asset('/') }}image/manufacturer_logo/logo.png">
-
+        content="{{\App\Setting\App::description}}" />
+    <link rel="shortcut icon" href="{{ asset('/image/manufacturer_logo/') }}/{{\App\Setting\App::favicon}}" type="image/x-icon">  
     <link rel="stylesheet" href="{{ asset('/') }}front_asset/style.css">
     <link rel="stylesheet" href="{{ asset('/') }}front_asset/responsive.css">
     <link rel="stylesheet" href="{{ asset('/') }}front_asset/css/bootstrap.min.css">
@@ -31,6 +27,7 @@
     <link rel="stylesheet" href="{{ asset('/') }}front_asset/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="{{ asset('/') }}front_asset/css/etalage.css">
+    <link rel="stylesheet" href="{{ asset('/') }}front_asset/css/socialbtn.css">
 
 
     <link rel="stylesheet" href="{{ asset('/') }}front_asset/css/mega_menu.css">
@@ -54,9 +51,21 @@
                     // alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
                 }
             });
-
         });
+
+        <script>
+  !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(arguments)};
+  d=s.createElement(q);d.src='//d1l6p2sc9645hc.cloudfront.net/gosquared.js';q=
+  s.getElementsByTagName(q)[0];q.parentNode.insertBefore(d,q)}(window,document
+  ,'script','_gs');
+
+  _gs('GSN-622523-L');
+  _gs('set', 'anonymizeIP', true);
+</script>
+
+
     </script>
+
 
 </head>
 
@@ -72,7 +81,14 @@
     <div class="wrapper">
         @yield('content')
     </div>
+
     <!--content area end-->
+ <!-- Messenger Chat plugin Code -->
+ <div id="fb-root"></div>
+
+ <!-- Your Chat plugin code -->
+ <div id="fb-customer-chat" class="fb-customerchat">
+ </div>
 
 
     <!--<footer class="navbar-fixed-bottom " style="width: 100%;background: none;" id="SidebarCardMenu">-->
@@ -155,7 +171,29 @@
                 });
             }
         });
+
+
+        var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "103916037887695");
+      chatbox.setAttribute("attribution", "biz_inbox");
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v11.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
     </script>
+
+
     <script>
         @yield('script')
     </script>

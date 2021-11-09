@@ -108,7 +108,7 @@
                                              মূল্য :   <?php if($product->rprice > $product->sprice) { ?><del>৳ {{ $product->rprice }}</del><?php } ?> <strong> ৳ {{ $product->sprice }} </strong></p>
 
                                             @if($product->pcode)
-                                            <p style="font-size: 16px;background: #f16e52;color: #fff; display: inline-block;padding: 1px 8px;border-radius: 20px;">প্রোডাক্ট কোড: {{ $product->pcode }}</p>
+                                            <p style="font-size: 16px;background: #ACAEB0;color: #fff; display: inline-block;padding: 1px 8px;border-radius: 20px;">প্রোডাক্ট কোড: {{ $product->pcode }}</p>
                                             @endif
                                           <input type="hidden" name="QtnLimitPerUserHiddenField" id="QtnLimitPerUserHiddenField" value="15">
 
@@ -137,11 +137,11 @@
 
                                         <div class="col-xs-12 col-sm-6 col-md-6 " style="padding: 0px;margin-top: 30px;    margin-bottom: 30px;">
 
-                                            <div class="btn col-xs-12 col-sm-12 col-md-12" style="font-size: 21px;margin-bottom: 20px;background:#f16e52 ;color:#fff">
+                                            <div class="btn col-xs-12 col-sm-12 col-md-12" style="font-size: 21px;margin-bottom: 20px;background:#ACAEB0 ;color:#fff">
                                                 <input type="button"  onclick="buyNow({{ $product->id }})" value="অর্ডার করুন" style="background: transparent;border: none;margin: 0;padding: 0">
                                             </div>
 
-                                            <div class=" btn col-xs-12 col-sm-12 col-md-12" onclick="ProductAddTwoCart({{ $product->id }})" style="background:#1A4314;color:#fff;font-size: 21px;">
+                                            <div class=" btn col-xs-12 col-sm-12 col-md-12" onclick="ProductAddTwoCart({{ $product->id }})" style="background:#4997A2;color:#fff;font-size: 21px;">
                                                কার্ট-এ যোগ করুন
                                             </div>
                                         </div>
@@ -151,11 +151,13 @@
                                                 $numbers = explode(',',$product->phone);
                                                 $total = count($numbers);
                                               @endphp
-                                              <h4 style="font-weight:bold;color:red"><i class="fa fa-address-book"> </i> ফোনে অর্ডারের জন্য ডায়াল করুন</h4>
+                                              <h4 style="font-weight:bold;color:#ACAEB0"><i class="fa fa-address-book"> </i> ফোনে অর্ডারের জন্য ডায়াল করুন</h4>
                                                 <div class="col-sm-6 col-xs-12" style="padding:0">
-                                                  <h4 style="font-size:25px;margin: 15px 0 15px 0;text-align:center;color:red;font-weight:900;text-align: left">
+                                                  <h4 style="font-size:25px;margin: 15px 0 15px 0;text-align:center;color:#ACAEB0;font-weight:900;text-align: left">
                                                      @foreach($numbers as $number)
-                                                     <i class="fa fa-phone-square" style="padding-left:20px;color: green;">   </i> {{$number}} <br>
+                                                     <div class="col-sm-12 col-md-12  col-xs-12" style="padding: 0">
+                                                     <i class="fa fa-phone-square img-responsive pull-left mobile-icon" style="width: 60px;padding-left:15px;color: #4997A2;"><span style="padding-left:15px;color: black;">{{$number}}</span style=""></i>  <br>
+                                                     </div>
                                                      @endforeach
                                                  </h4>
                                                 </div>
@@ -225,9 +227,6 @@
 
                                     </div>
                                 </div>
-
-
-
                             </div>
                         </div>
 
@@ -263,7 +262,7 @@
                      <div class="col-sm-2 col-xs-6  product-hover-area" style="padding: 0">
                         <div class="col-sm-12 col-xs-12 padding-zero " style="background-color: #fff;padding: 0px;border-bottom: 3px solid #ECECEC;border-right: 3px solid #ECECEC;">
                             <a style="padding: 0px;height: 180px;overflow: hidden;" class="img-hover col-sm-12 padding-zero" href="{{ url('/product') }}/{{ $product->id }}/{{ $product->slug }}" id="1354">
-                                <img class="img-responsive zoomEffect" style="margin: 0 auto;padding:5px" src="{{asset('/')}}image/product_image/{{$product->img1}}" alt="{{$product->title}}">
+                                <img class="img-responsive zoomEffect" style="margin: 0 auto;padding:5px; width: 100% !important; height:200.167px !important; margin-right: 15px;" src="{{asset('/')}}image/product_image/{{$product->img1}}" alt="{{$product->title}}">
                             </a>
                             <span id="productPrice1354" class="col-sm-12  col-xs-12 text-center" style="background: #fff;padding: 0;display: block;line-height:18px;color: #D2691E;font-size: 14px;font-weight: bold;height: 38px">
                                    @if($product->rprice > $product->sprice)

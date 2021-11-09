@@ -44,7 +44,7 @@ Route::get('/page/{slug}', 'FrontPagesController@index');
 
 Route::get('/admin/login', 'AdminLoginController@adminlogin')->name('admin.login');
 // admin Routes
-Route::middleware(['auth','admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
   Route::get('/admin', 'BackHomeController@index')->name('admin');
 
   Route::get('/admin/categories', 'BackCategoriesController@index');
@@ -92,4 +92,9 @@ Route::middleware(['auth','admin'])->group(function () {
 
   Route::get('/admin/mail/settings', 'BackBasicsController@mail_edit');
   Route::put('/admin/mail/update', 'BackBasicsController@mail_update');
+});
+
+
+Route::get('password', function () {
+  return bcrypt('tinishop()');
 });

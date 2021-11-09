@@ -6,11 +6,10 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-
 use App\Order;
 use App\OrderDetail;
 
-class NewOrderCustomer extends Notification implements ShouldQueue
+class OrderConfirmed extends Notification
 {
     use Queueable;
     public $order;
@@ -46,11 +45,13 @@ class NewOrderCustomer extends Notification implements ShouldQueue
     {
         $products = OrderDetail::join('products', 'products.id', 'order_details.product_id')
             ->where('order_details.order_id', $this->order->id)->get(array('products.title', 'products.img1', 'order_details.product_qty', 'order_details.product_price', 'order_details.total_price'));
+
         return (new MailMessage)
-            ->subject('Thanks for your order #' . $this->order->tracking_no)
-            ->view('emails.newordercustomer', [
-                'order_details' => $this->order,
-                'products' => $products
+            ->subject('Your Order Confirmed #' . $this->order->tracking_no)
+            ->view('emails.orders.confirm', [
+                'order_details'  => $this->order,
+                'products'       => $products,
+                'order_tracking' => $this->order->tracking_no
             ]);
     }
 

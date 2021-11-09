@@ -51,11 +51,16 @@ Route::group(['prefix'=>'admin','namespace' => 'Admin','middleware'=>['auth','ad
 
 });
 
+//Category
 
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
 
-// Route::get('/admin/sellers',function(){
-//     return "Hello";
-// });
+    //Sub Category destroy
+    Route::get('sub/category/destroy/{id}', 'BackCategoriesController@destroySub')->name('categories.destroy');
+
+    //Main Category destroy
+    Route::get('main/category/destroy/{id}', 'BackCategoriesController@destroyMain')->name('categories.destroy');
+});
 
 
 
@@ -75,6 +80,7 @@ Route::group([
     Route::get('/product/add','VendorController@addProduct')->name('vendor.products.add');
     Route::get('/products/view','VendorController@viewProduct')->name('vendor.products.view');
     Route::post('/product/store','VendorController@storeProduct')->name('vendor.products.store');
+    
     
 
 });
@@ -106,6 +112,10 @@ Route::post('/search','Frontend\SearchController@index');
 Route::get('/verify/user/dashboard','Admin\RoleController@index');
 
 Route::get('/demoInfo','Admin\RoleController@create');
+
+
+
+
 
 
 

@@ -26,7 +26,7 @@ Delivery Info
                 <!-- /.card-header -->
                   <div class="card-body">
                     <div class="form-group row">
-                      <label for="name" class="col-sm-3 control-label">Inside City Cost <span style="color:red;">*</span></label>
+                      <label for="name" class="col-sm-12 control-label">Inside City Cost <span style="color:red;">*</span></label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control @error('delivery_cost1') is-invalid @enderror" id="delivery_cost1" name="delivery_cost1" value="{{ $info->delivery_cost1 }}" required>
                         @error('delivery_cost1')
@@ -37,7 +37,7 @@ Delivery Info
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="pcode" class="col-sm-3 control-label">Outside City Cost <span style="color:red;">*</span></label>
+                      <label for="pcode" class="col-sm-12 control-label">Outside City Cost <span style="color:red;">*</span></label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control @error('delivery_cost2') is-invalid @enderror" id="delivery_cost2" name="delivery_cost2" value="{{ $info->delivery_cost2 }}" required>
                         @error('delivery_cost2')

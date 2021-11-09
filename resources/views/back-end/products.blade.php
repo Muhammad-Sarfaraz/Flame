@@ -79,6 +79,7 @@ Products
       toastr.{{ $type }}('{{ Session::get('msg-'.$type) }}');
     @endif
 @endforeach
+
 $(document).ready(function(){
     $("#products").DataTable({
       pageLength: 25,

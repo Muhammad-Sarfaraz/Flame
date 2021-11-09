@@ -7,7 +7,7 @@
                 style="padding: 8px 0;width:100%;display: inline-block;color:#000;font-size:14px;font-weight:bold;text-align:center">{{ Cart::total() }}
                 Tk.</span>
             <span
-                style="width:100%;display: inline-block; background: green; color: #fff;font-weight:bold;padding:2px;text-align:center;border-radius: 0 0 0 5px;">
+                style="width:100%;display: inline-block; background: #4997A2; color: #fff;font-weight:bold;padding:2px;text-align:center;border-radius: 0 0 0 5px;">
                 <i class="fa fa-shopping-cart " title="My Cart" style="    font-size: 30px;"> </i>
                 <span id="totalCartItems2">{{ Cart::content()->count() }} Items</span>
             </span>
@@ -17,7 +17,7 @@
 </footer>
 
 
-<footer class="navbar-default" style="background: #5DA779">
+<footer class="navbar-default" style="background: #F9FAFB">
     <div class="container-fluid ">
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
@@ -29,8 +29,35 @@
                 @endforeach
             </center>
 
-            <p class="text-center" style="color:#fff;font-weight:bold;padding-top:8px;padding-bottom: 8px;">Copyright ©
-                {{ date('Y') }} | {{$basic->name}} | Design and Development By <a href="#">TwinsTech</a></p>
+
+
+
+            <div class="row bg-black">
+
+                <div class="col-md-2">
+
+                </div>
+
+                <div class="col-md-8">
+                    <ul class="  social-network social-circle">
+                        <li><a href="{{\App\Setting\App::fb ?? ''}}" class="app icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2">
+
+                </div>
+
+            </div>
+
+            <p class="text-center" style="color:#313131;font-weight:bold;padding-top:8px;padding-bottom: 8px;">Copyright
+                ©
+                {{ date('Y') }} By <a href="{{url('/')}}">{{\App\Setting\App::name ?? ''}}</a> </p>
+
+            <p>Current User:{{rand(10,100)}}</p>
+
+
+
         </div>
 
     </div>

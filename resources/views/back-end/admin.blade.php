@@ -21,11 +21,14 @@
   <link rel="stylesheet" href="{{ asset('/') }}back-end/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
   <!-- Google Font: Source Sans Pro -->
   
-
   <style>
-      @yield('style')
+
+      @yield('style') ;
+
   </style>
+
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <!-- Navbar -->
@@ -44,9 +47,9 @@
   <aside class="main-sidebar elevation-4 sidebar-light-warning">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="{{ asset('/') }}back-end/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="{{ asset('/') }}{{$basic->logo}}" alt="{{\App\Setting\App::title ?? ''}}" class="brand-image img-circle"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">{{$basic->name}}</span>
+      <span class="brand-text font-weight-light" style="">{{$basic->name}}</span>
     </a>
 
     <!-- Sidebar -->
@@ -85,7 +88,7 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2020 By Nakshi Palli |
+    <strong>Copyright &copy; {{date("Y")}} {{\App\Setting\App::footer ?? ''}} |
     All rights reserved.
   </footer>
 </div>

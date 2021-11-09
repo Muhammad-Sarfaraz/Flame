@@ -19,11 +19,10 @@
   <link rel="stylesheet" href="{{ asset('/') }}back-end/plugins/summernote/summernote-bs4.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('/') }}back-end/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
-
   
 
   <style>
-      @yield('style')
+      @yield('style') ;
   </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -44,7 +43,7 @@
   <aside class="main-sidebar elevation-4 sidebar-light-warning">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="{{ asset('/') }}back-end/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="{{ asset('/') }}/{{$basic->logo}}" alt="{{\App\Setting\App::title ?? ''}}" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">{{$basic->name}}</span>
     </a>

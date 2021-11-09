@@ -113,7 +113,7 @@ View Order
               <!-- this row will not appear when printing -->
               <div class="row no-print">
                 <div class="col-12">
-                  <a href="#" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                  <a href="#" onclick="print();" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
                   @if($order->status == 'Pending')
                   <form action="{{ url('admin/orders/accept/'.$order->id)}}" method="post">
                     @csrf

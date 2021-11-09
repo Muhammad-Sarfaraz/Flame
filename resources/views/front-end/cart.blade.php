@@ -1,7 +1,7 @@
 @extends('front-end.master')
 
 @section('title')
-
+Product Cart
 @endsection
 
 @section('content')
@@ -15,13 +15,13 @@
                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-left: 5px;padding-right: 5px">
                   <div class="panel panel-success">
                       <div class="panel-heading">
-                          <strong style="font-size: 16px;color: green"> কাস্টমার ইনফরমেশন </strong>
+                          <strong style="font-size: 16px;color: #000018"> কাস্টমার ইনফরমেশন </strong>
                       </div>
                       <div class="panel-body" style="padding-left: 30px;padding-right: 30px">
                               <div class="col-lg-12 col-md-12  col-sm-12 col-xs-12">
                                       <div class="form-group" style="padding-bottom: 15px">
                                           <!--<input name="product_id" type="hidden" value="">-->
-                                          <input style="width: 100% !important;border: 1px solid limegreen;padding-left: 10px" name="customer_name" type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1"  value="{{ old('customer_name') }}">
+                                          <input style="width: 100% !important;border: 1px solid #4997A2;padding-left: 10px" name="customer_name" type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1"  value="{{ old('customer_name') }}">
                                           @error('customer_name')
                                               <span class="invalid-feedback" style="color:red;" role="alert">
                                                   <strong>{{ $message }}</strong>
@@ -29,7 +29,7 @@
                                           @enderror
                                       </div>
                                       <div class="form-group" style="padding-bottom: 15px">
-                                          <input style="width: 100% !important;border: 1px solid limegreen;padding-left: 10px" name="customer_mobile" required type="number" class="form-control" placeholder="Mobile" aria-describedby="basic-addon1" value="{{ old('customer_mobile') }}">
+                                          <input style="width: 100% !important;border: 1px solid #4997A2;padding-left: 10px" name="customer_mobile" required type="number" class="form-control" placeholder="Mobile" aria-describedby="basic-addon1" value="{{ old('customer_mobile') }}">
                                           @error('customer_mobile')
                                           <span class="invalid-feedback" style="color:red;" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -37,7 +37,7 @@
                                           @enderror
                                       </div>
                                       <div class="form-group" style="padding-bottom: 15px">
-                                          <input style="width: 100% !important;border: 1px solid limegreen;padding-left: 10px" name="customer_email" type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1" value="{{ old('customer_email') }}">
+                                          <input style="width: 100% !important;border: 1px solid #4997A2;padding-left: 10px" name="customer_email" type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1" value="{{ old('customer_email') }}">
                                           @error('customer_email')
                                           <span class="invalid-feedback" style="color:red;" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -45,7 +45,7 @@
                                           @enderror
                                       </div>
                                       <div class="form-group" style="padding-bottom: 15px">
-                                          <select id="DeliAddress" onchange="UpdateOrderInfo(this.value)" name="customer_area" required="required" class="form-control" style="border: 1px solid limegreen">
+                                          <select id="DeliAddress" onchange="UpdateOrderInfo(this.value)" name="customer_area" required="required" class="form-control" style="border: 1px solid #4997A2">
                                               <option value="" disabled>Select Your Area</option>
                                               <option selected="" value="1">Inside Dhaka</option>
                                               <option value="2">Outside Dhaka</option>
@@ -57,7 +57,7 @@
                                           @enderror
                                       </div>
                                       <div class="form-group" style="padding-bottom: 15px">
-                                          <textarea style="border: 1px solid limegreen;" class="form-control" name="customer_address" required="" placeholder="Delivery Address" spellcheck="false">{{ old('customer_address') }}</textarea>
+                                          <textarea style="border: 1px solid #4997A2;" class="form-control" name="customer_address" required="" placeholder="Delivery Address" spellcheck="false">{{ old('customer_address') }}</textarea>
                                           @error('customer_address')
                                           <span class="invalid-feedback" style="color:red;" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -65,10 +65,10 @@
                                           @enderror
                                       </div>
                                       <div class="form-group" style="padding-bottom: 15px">
-                                          <input id="submitBTN" type="submit" class="btn btn-success btn-block" value="অর্ডার সাবমিট করুন" style="width:100% !important;background: green">
+                                          <input id="submitBTN" type="submit" class="btn btn-success btn-block" value="অর্ডার সাবমিট করুন" style="width:100% !important;background: #ACAEB0">
                                       </div>
                                        <div class="form-group" style="padding-bottom: 15px">
-                                            <a href="{{ url('/') }}" class="btn btn-info" style="width: 100%;border-radius: inherit;background:#f16e52"> আরো শপিং করুন </a>
+                                            <a href="{{ url('/') }}" class="btn btn-info" style="width: 100%;border-radius: inherit;background:#4997A2"> আরো শপিং করুন </a>
                                        </div>
 
                               </div>

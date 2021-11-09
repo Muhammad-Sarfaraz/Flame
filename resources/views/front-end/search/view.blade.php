@@ -6,11 +6,6 @@ Order Confirmation
 
 @section('content')
 
-
-
-
-
-
 <div class="container" style="padding-right:0px">
     <div class="row">
 

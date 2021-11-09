@@ -30,34 +30,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        View::composer('*',function($view){
-          $basic = Basic::find(1);
-          $view->with('basic',$basic);
+        View::composer('*', function ($view) {
+            $basic = Basic::find(1);
+            $view->with('basic', $basic);
         });
 
-
-    //  Event::listen('illuminate.query', function($query)
-    //     {
-    //         //var_dump($query);
-    //         Log::info($query);
-            
-    //     });
-
-    //     Log::warn("Test Log");
-    // }
-
-
-    
-
-
-    DB::listen(function ($query) {
-        if (preg_match('/^select/', $query->sql)) {
-            Log::info('sql: ' .  $query->sql);
-            // Also available are $query->bindings and $query->time.
-        }
-    });
-
-
-
+        DB::listen(function ($query) {
+            if (preg_match('/^select/', $query->sql)) {
+                Log::info('sql: ' .  $query->sql);
+                // Also available are $query->bindings and $query->time.
+            }
+        });
     }
 }

@@ -131,7 +131,7 @@ Categories
                         <td>
                           <div class="col-md-12">
                             <button type="button" class="editmctg btn btn-success btn-xs" data-toggle="modal" data-target="#editModal">Edit</button>
-                            <button type="button" onclick="/sub-category/delete/" class="dmctg btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                            <button type="button" onclick="location.href='{{ url('admin/main/category/destroy/') }}/{{$category->id}}';"  class="dmctg btn btn-danger btn-xs" >Delete</button>
                           </div>
                         </td>
                       </tr>
@@ -146,7 +146,7 @@ Categories
                           <td>
                             <div class="col-md-12">
                               <button type="button" class="editsub btn btn-success btn-xs" data-toggle="modal" data-target="#editsubModal">Edit</button>
-                              <button type="button" class="dsub btn btn-danger btn-xs" data-toggle="modal" data-target="#deletesubModal">Delete</button>
+                            <button type="button" onclick="location.href='{{ url('admin/sub/category/destroy/') }}/{{$subctg->id}}';"  class="dmctg btn btn-danger btn-xs" >Delete</button>
                             </div>
                           </td>
                         </tr>

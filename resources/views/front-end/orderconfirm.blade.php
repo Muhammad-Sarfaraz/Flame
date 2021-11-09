@@ -55,7 +55,7 @@ Order Confirmation
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left: 5px;padding-right: 5px;padding-bottom: 100px;padding-top: 20px">
                     <center>
-                        <a href="{{ url('/') }}" class="btn btn-info" style="background: #f2f2f2;color:#000;font-weight: bold"> আরো শপিং করুন </a>
+                        <a href="{{ url('/') }}" class="btn btn-info" style="background:#ACAEB0;color: #fff;font-weight: bold"> আরো শপিং করুন </a>
                     </center>
                 </div>
         </div>

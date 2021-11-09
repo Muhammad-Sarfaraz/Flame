@@ -1,7 +1,7 @@
 @extends('front-end.master')
 
 @section('title')
-Online Shopping In Bangladesh: Fashion, Electronics, Mobiles - Gulshanshop.com
+{{\App\Setting\App::title ?? ''}}
 @endsection
 
 @section('content')
@@ -68,19 +68,19 @@ Online Shopping In Bangladesh: Fashion, Electronics, Mobiles - Gulshanshop.com
                 <h4 class="cat-title" style="margin-bottom: 5px !important;">প্রোডাক্ট ক্যাটেগরীজ</h4>
                 @foreach($categories as $category)
                 <a href="{{ url('category') }}/{{ $category->name }}/{{ $category->id }}" class="btn btn-success"
-                    style="margin: 2px;background: green; font-size: 12px;">{{ $category->name }}</a>
+                    style="color:black;margin: 0px;background: #fff; font-size: 12px; border-color:#D4D4D8">{{ $category->name }}</a>
                 @endforeach
             </div>
         </div>
 
         <div class="row" style="margin-top:20px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  mobile-border-of"
-                style="background: #CDF6CD;padding: 5px;">
-                <a href="{{ url('hotdeals') }}"><img src="{{ asset('/') }}image/hot-eg-logo.gif"></a>
-                <a href="{{ url('hotdeals') }}" class="pull-right"><img src="{{ asset('/') }}image/hot-deal.gif"></a>
+                style="background: #fff;padding: 10px;">
+                
+                <a href="{{ url('hotdeals') }}" class="pull-left cat-title" style="margin-bottom: 5px !important;">সকল হট ডিল</a>
 
                 <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12"
-                    style="background: #CDF6CD;padding: 0px;margin-bottom: 20px;padding-top: 15px  ">
+                    style="background: #fff;padding: 0px;margin-bottom: 20px;padding-top: 15px  ">
                     <div class="slider">
                         <ul class="product-category owl-carousel nav">
                             @foreach($hotdeals1 as $hotproduct)
@@ -101,7 +101,7 @@ Online Shopping In Bangladesh: Fashion, Electronics, Mobiles - Gulshanshop.com
                                     @endif
                                     <span class="price-text">৳&nbsp; {{ $hotproduct->sprice }}</span>
                                     <img src="{{ asset('/') }}image/product_image/{{ $hotproduct->img1 }}"
-                                        alt="@php echo url('/'); @endphp" title="{{ $hotproduct->title }}" />
+                                        alt="@php echo url('/'); @endphp" title="{{ $hotproduct->title }}" style="width: 179.167px !important; height:179.167px !important; margin-right: 15px;" />
                                 </a>
                             </li>
                             @endforeach
@@ -110,7 +110,7 @@ Online Shopping In Bangladesh: Fashion, Electronics, Mobiles - Gulshanshop.com
                 </div>
                 @if(count($hotdeals2))
                 <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12"
-                    style="background: #CDF6CD;padding: 0px;margin-bottom: 20px;padding-top: 15px">
+                    style="padding: 0px;margin-bottom: 20px;padding-top: 15px">
                     <div class="slider">
                         <ul class="product-category owl-carousel nav">
                             @foreach($hotdeals2 as $hotproduct)
@@ -131,7 +131,7 @@ Online Shopping In Bangladesh: Fashion, Electronics, Mobiles - Gulshanshop.com
                                     @endif
                                     <span class="price-text">৳&nbsp; {{ $hotproduct->sprice }}</span>
                                     <img src="{{ asset('/') }}image/product_image/{{ $hotproduct->img1 }}"
-                                        alt="@php echo url('/'); @endphp" title="{{ $hotproduct->title }}" />
+                                        alt="@php echo url('/'); @endphp" title="{{ $hotproduct->title }}" style="width: 179.167px !important; height:179.167px !important; margin-right: 15px;" />
                                 </a>
                             </li>
                             @endforeach
@@ -152,19 +152,18 @@ Online Shopping In Bangladesh: Fashion, Electronics, Mobiles - Gulshanshop.com
                     style="background: #fff;padding: 0px;margin-bottom: 20px; ;border: 3px solid #ECECEC;border-right:0;border-bottom:0"
                     id="Product_Ajax">
 
-
-
                     @foreach($products as $product)
-                    <div class="col-sm-2 col-xs-6  product-hover-area" style="padding: 0">
+                  
+                    <div class="col-sm-2 col-xs-6  product-hover-area" style="padding: 0" onclick="window.location='product/{{ $product->id }}/{{ $product->slug }}'">
                         <div class="col-sm-12 col-xs-12 padding-zero "
                             style="background-color: #fff;padding: 0px;border-bottom: 3px solid #ECECEC;border-right: 3px solid #ECECEC;">
 
                             <a style="padding: 0px;height: 180px;overflow: hidden;"
                                 class="img-hover col-sm-12 padding-zero"
-                                href="product/{{ $product->id }}/{{ $product->slug }}" id="1186">
-                                <img class="img-responsive zoomEffect" style="margin: 0 auto;padding:5px"
+                                href="product/{{ $product->id }}/{{ $product->slug }}" id="1186" >
+                                <img class="img-responsive zoomEffect" style="margin: 0 auto;padding:5px; width: 100% !important; height:200.167px !important; margin-right: 15px;"
                                     src="{{ asset('/') }}image/product_image/{{ $product->img1 }}"
-                                    alt="{{ $product->title }}">
+                                    alt="{{ $product->title }}" />
                             </a>
 
 
@@ -172,8 +171,8 @@ Online Shopping In Bangladesh: Fashion, Electronics, Mobiles - Gulshanshop.com
                                 style="background: #fff;padding: 0;display: block;line-height:18px;color: #D2691E;font-size: 14px;font-weight: bold;height: 38px">
 
                                 @if($product->rprice > $product->sprice)<del
-                                    style="color:#b8b8b8;font-size:14px">৳{{ $product->rprice }}</del> @endif <br><label
-                                    style="color:green;font-size: 20px;"> ৳ {{ $product->sprice }}</label>
+                                    style="color:#b8b8b8;font-size:14px">৳{{ $product->rprice ?? ''}}</del> @endif <br><label
+                                    style="color:#313131;font-size: 20px;"> ৳ {{ $product->sprice ?? ''}}</label>
 
                             </span>
 
@@ -186,16 +185,11 @@ Online Shopping In Bangladesh: Fashion, Electronics, Mobiles - Gulshanshop.com
                     </div>
                     @endforeach
                 </div>
-
-                <div class="col-md-12">
-                    {{ $products->links() }}
-                </div>
-
             </div>
-
-
         </div>
-
+        <div class="col-md-12">
+            {{ $products->links() }}
+        </div>
     </div>
 </section>
 
